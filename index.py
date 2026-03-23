@@ -48,7 +48,7 @@ def processQuery(query, indexType):
 
         vectorizedQuery = np.array(
             [
-                model.wv[word] if word in model.wv else np.zeros((1, 100))
+                model.wv[word] if word in model.wv else np.zeros((100, ))
                 for word in checkedQuery
             ]
         ).mean(axis=0)
