@@ -28,6 +28,9 @@ def processQuery(query, indexType):
         for word in tokenizedQuery
     ]
 
+    if any(x is None for x in checkedQuery):
+        return None, None, None
+
     if indexType == "bm25":
         lemmatizedQuery = [q.lemma_ for q in processer(" ".join(checkedQuery))]
 
@@ -74,6 +77,10 @@ def search(query, indexType, rankNum):
     :returns: spellchecked query, relevant documents
     """
     checkedQuery, query, matrix = processQuery(query, indexType)
+
+    if checkedQuery is None:
+        return "Couldn't identify the query", {}
+
     results = []
 
     if indexType == "bm25":
