@@ -52,7 +52,7 @@ def processQuery(query, indexType):
 
         matrix = np.load("models/word2vec_matrix.npy")
 
-        return vectorizedQuery, matrix
+        return checkedQuery, vectorizedQuery, matrix
 
     if indexType == "fasttext":
         model = FastText.load("models/fasttext.model")
