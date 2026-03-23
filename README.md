@@ -74,6 +74,7 @@
 ```
 conda env create -f environment.yml
 conda activate project
+python -m spacy download en_core_web_sm
 ```
 
 ### Использование сайта
