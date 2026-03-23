@@ -1,4 +1,5 @@
 import json
+import time
 import numpy as np
 import pickle
 from scipy import sparse
@@ -107,7 +108,16 @@ def main():
     )
     args = parser.parse_args()
 
-    content = search(args.q, args.idx, args.N)
+    start = time.time()
+
+    query, content = search(args.query, args.idx, args.top)
+
+    end = time.time()
+
+    print(f"Query: {query}")
+    print(f"Index: {args.idx}")
+    print(f"Execution time: {end - start}")
+    print()
 
     for res in content:
         print(f"Title: {res['title']}")
