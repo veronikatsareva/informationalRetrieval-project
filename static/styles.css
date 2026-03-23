@@ -1,0 +1,67 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #dec5ff;
+    font-family: 'Roboto Mono', monospace;
+}
+
+main {
+    flex-grow: 1;
+    padding: 50px 100px;
+}
+
+h1,
+h2,
+h4,
+p,
+li {
+    color: #231942;
+}
+
+.searchGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    border: #231942 4px dotted;
+    padding: 15px;
+}
+
+.searchGrid>.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.searchGrid>.div2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.searchGrid>.div3 {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.searchGrid>.div4 {
+    grid-area: 2 / 1 / 3 / 4;
+}
+
+.input-field,
+.select-field {
+    width: 100%;
+    height: 30px;
+    color: #231942;
+    border: #231942 1px solid;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: #e0b1cb;
+    color: #231942;
+    text-align: center;
+    border: #231942 1px solid;
+    height: 30px;
+}

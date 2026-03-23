@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %} &#10023; Search &#10023;{% endblock %}
+{% block content %}
+<h2 style="text-align: center;">Let's find something to watch!</h2>
+<p>
+    <u>Instruction</u>
+    <br>
+    There are 3 fields: for the query, for the index and for the integer number.
+    <br>
+<ul>
+    <li>The <code>query</code> is any string that you aim to find in the movie corpus. The query is checked with an implemented spellchecker.</li>
+    <li>The <code>index</code> is type of indexing / vectorization that are supported in the search: BM-25, word2vec and fasttext. Keep in mind that these vectorizing methods give different results due to different algorithms.</li>
+    <li>The <code>integer number</code> is an amount of records that you want to receive (e.g. the default is top-10 records).</li>
+</ul>
+The results are sorted in descending order according to their similarity to the query (the first one is the most relevant and similar and etc.).
+</p>
+<form action="/results" method="post">
+    <div class="searchGrid">
+        <div class="div1">
+            <input class="input-field" type="search" id="searchField" name="searchField" placeholder="Enter a query.">
+        </div>
+        <div class="div2">
+            <select class="select-field" id="indexType" name="indexType">
+                <option value="bm25" selected>BM-25</option>
+                <option value="word2vec">word2vec</option>
+                <option value="fasttext">fasttext</option>
+            </select>
+        </div>
+        <div class="div3">
+            <input class="input-field" type="number" id="rankNum" name="rankNum" placeholder="Enter a number." min="0" value="10">
+        </div>
+        <div class="div4"> 
+            <button type="submit" class="submit-button">Search</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

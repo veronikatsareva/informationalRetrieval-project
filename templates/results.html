@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} &#10023; Results &#10023;{% endblock %}
+{% block content %}
+<h2 style="text-align: center;">Results | {{ N }} records </h2>
+<p>Query: {{ queryChecked }}</p>
+<p>Index: {{ indexType }}</p>
+<p>Execution time: {{ time }}</p>
+<hr>
+{% for res in records %}
+<p><u>Title:</u> {{ res["title"] }}</p>
+<p><u>Release year:</u> {{ res["release_year"] }}</p>
+<p><u>Rating:</u> {{ res["imdb_score"] }}</p>
+<p><u>Plot:</u> {{ res["description"] }}</p>
+<hr>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} &#10023; MovieSearch &#10023;{% endblock %}
+{% block content %}
+<h2 style="text-align: center;">Welcome to the <code>MovieSearch</code>!</h2>
+<br>
+<h4 style="text-align: center;">
+What is it?</h3>
+<br>
+<p>
+    This is a website that implements searching system for a collection of documents about the movies and TV-shows.
+    The corpus consists of 5277 records. The data was borrowed from <a href="https://www.kaggle.com/datasets/thedevastator/netflix-imdb-scores">Kaggle</a>.
+    Each record consists of the title, the release year, the IMDB score and a short annotation.
+    The search instructions are provided on the <a href="/search"> search page</a>.
+</p>
+<br>
+<h4 style="text-align: center;">Click below to start searching!</h4>
+<br>
+<form action="/search">
+    <button type="submit" class="submit-button">Let's go searching!</button>
+</form>
+{% endblock %}
